@@ -15,7 +15,22 @@ $(function () {
         output = sum;
         break;
       case 2:
-        output = "2"
+        var sum = 0;
+        var f = 1;
+        var s = 2;
+
+        while (s < 4000000) {
+          if (s % 2 == 0) {
+            sum += s;
+          }
+
+          temp = f;
+          f = s;
+          s = temp + s;
+
+        }
+
+        output = sum;
 
         break;
       default:
