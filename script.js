@@ -2,7 +2,7 @@ $(function () {
 
   $('#submit').click(function () {
     var number = parseInt($('#problem').val());
-    var output = "Not a valid case";
+    var output = "Invalid";
 
     switch (number) {
       case 1:
@@ -14,6 +14,7 @@ $(function () {
         }
         output = sum;
         break;
+
       case 2:
         var sum = 0;
         var f = 1;
@@ -33,6 +34,44 @@ $(function () {
         output = sum;
 
         break;
+      case 3:
+        var max = 600851475143;
+
+        var cur = 2;
+
+        output = calc(max);
+
+        function calc(localmax) {
+          if (isPrime(localmax)) {
+            console.log(localmax);
+            return localmax
+          }
+          else {
+            var x = cur;
+
+            while (localmax % x != 0) {
+              x++;
+            }
+
+            cur = x;
+
+            return calc(localmax / cur)
+          }
+
+        }
+
+        function isPrime(num) {
+          var stat = true;
+          for (x = 2; x < Math.sqrt(num); x++) {
+            if (num % x == 0) {
+              stat = false;
+            }
+          }
+          return stat;
+        }
+        
+        break;
+
       default:
 
     }
