@@ -34,6 +34,7 @@ $(function () {
         output = sum;
 
         break;
+
       case 3:
         var max = 600851475143;
 
@@ -69,10 +70,56 @@ $(function () {
           }
           return stat;
         }
-        
+
         break;
 
+      case 4:
+        var largest = 0;
+
+        var found = false;
+
+        for (f = 999; f > 0; f--) {
+          for (s = 999; s > 0; s--) {
+            if (isPalindrome(f * s)) {
+              if (f * s > largest) {
+                largest = f * s
+              }
+            }
+          }
+        }
+
+        output = largest;
+
+        function isPalindrome(num) {
+
+          var n = num.toString();
+
+          if (n.toString().length % 2 == 0) {
+            var right = n.substring(n.length / 2, n.length);
+            var left = n.substring(0, n.length / 2);
+
+            var right_inv = "";
+
+            for (x = right.length - 1; x >= 0; x--) {
+              right_inv = right_inv.concat(right[x]);
+            }
+
+            if (right_inv == left) {
+              return true;
+            }
+            else {
+              return false;
+            }
+          }
+
+          else {
+            return false;
+          }
+        }
+
+        break;
       default:
+        break;
 
     }
     $('#output').text(output)
