@@ -118,6 +118,38 @@ $(function () {
         }
 
         break;
+      case 5:
+        var found = false;
+
+        var n = 21;
+
+        while (!found) {
+          
+          if (divisible(n)) {
+            output = n;
+            found = true;
+          }
+          else {
+            n++;
+          }
+        }
+
+        function divisible(num) {
+
+          var count = 0;
+
+          for (x = 11; x <= 20; x++) {
+            if (num % x == 0) count++;
+          }
+
+          if (count == 10) {
+            return true;
+          }
+          else {
+            return false;
+          }
+        }
+        break;
       default:
         break;
 
