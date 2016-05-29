@@ -118,13 +118,14 @@ $(function () {
         }
 
         break;
+
       case 5:
         var found = false;
 
         var n = 21;
 
         while (!found) {
-          
+
           if (divisible(n)) {
             output = n;
             found = true;
@@ -150,6 +151,22 @@ $(function () {
           }
         }
         break;
+
+      case 6:
+        var squareSum = 0;
+        var sumSquared = 0;
+
+        for (x = 1; x <= 100; x++) {
+          sumSquared += x;
+          squareSum = squareSum + Math.pow(x, 2); 
+        }
+
+        var sumSquared = Math.pow(sumSquared, 2);
+
+        output = sumSquared - squareSum;
+
+        break;
+        
       default:
         break;
 
