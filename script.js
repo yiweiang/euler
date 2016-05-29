@@ -158,7 +158,7 @@ $(function () {
 
         for (x = 1; x <= 100; x++) {
           sumSquared += x;
-          squareSum = squareSum + Math.pow(x, 2); 
+          squareSum = squareSum + Math.pow(x, 2);
         }
 
         var sumSquared = Math.pow(sumSquared, 2);
@@ -166,7 +166,33 @@ $(function () {
         output = sumSquared - squareSum;
 
         break;
+
+      case 7:
+      
+        var count = 0;
+        var cur = 1;
         
+        while(count <= 10001){
+          if(isPrime(cur)){
+            count++
+            console.log(cur)
+          }
+          cur++;
+        }
+        
+        output = cur-1;
+
+        function isPrime(num) {
+          var stat = true;
+          for (x = 2; x < num; x++) {
+            if (num % x == 0) {
+              stat = false;
+            }
+          }
+          return stat;
+        }
+        break;
+
       default:
         break;
 
